@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/bin
-    cp build/${pname} $out/bin/${pname}
+    cp Builds/LinuxMakefile/build/${pname} $out/bin/${pname}
     chmod +x $out/bin/${pname}
   '';
 
