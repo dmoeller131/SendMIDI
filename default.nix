@@ -13,10 +13,11 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ stdenv.cc alsa-lib pkg-config ];
 
-  buildPhase = ''
-    cd Builds/LinuxMakefile
-    make CONFIG=Release
-  '';
+  makeFlags = [
+    "-C"
+    "Builds/LinuxMakefile"
+    "CONFIG=Release"
+  ];
 
   installPhase = ''
     mkdir -p $out/bin
